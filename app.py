@@ -1,6 +1,8 @@
 #! python3.9
 import eel, json, secrets, os, sys
 from tinydb import TinyDB, Query
+from dotenv import load_dotenv # python package for loading env file
+load_dotenv()
 
 
 
@@ -17,16 +19,6 @@ if os.path.exists("D://gE_Ode/monster_mash") == False:
     os.system('mkdir "D://gE_Ode/monster_mash"')
 if os.path.exists(os.path.join(os.environ["HOMEPATH"], "gE_Ode", "monster_mash", "project_Monster_mash")) == False:
     os.system("cd " + os.path.join(os.environ["HOMEPATH"], "gE_Ode", "monster_mash") + " && git clone https://github.com/Andyroid0/project_Monster_mash.git")
-
-#--------
-# Update Check ----------
-def Check_update():
-    db = TinyDB(os.path.join(os.environ["HOMEPATH"], "gE_Ode", "monster_mash", "Versioning_db.json"))
-    versions = db.table('Versions')
-    versions.search(Query().hash)
-    os.system("curl -H 'Accept: application/vnd.github.cloak-preview' \https://api.github.com/search/commits?q=hash:" + cachedHash)
-    versions.insert({"software": "MonsterTools", "hash": NewcachedHash"})
-
 #--------------
 
 
@@ -46,9 +38,10 @@ eel.init('web')
 
 @eel.expose
 def git_push_all():
+    token = os.environ.get("gTokenvar") #Grabs variable from env file
     os.system('cd ' + os.path.join(os.environ["HOMEPATH"], "gE_Ode", "monster_mash", "project_Monster_mash") + ' && git add -A')
     os.system('cd ' + os.path.join(os.environ["HOMEPATH"], "gE_Ode", "monster_mash", "project_Monster_mash") + ' && git commit -m "Revision"')
-    os.system("cd " + os.path.join(os.environ["HOMEPATH"], "gE_Ode", "monster_mash", "project_Monster_mash") + " && git push https://andyroid0:59d47d73f292e3c9aa93f18e862e4f6b6dfa1a6c@github.com/Andyroid0/project_Monster_mash.git --all")
+    os.system("cd " + os.path.join(os.environ["HOMEPATH"], "gE_Ode", "monster_mash", "project_Monster_mash") + " && git push https://andyroid0:" + token + "@github.com/Andyroid0/project_Monster_mash.git --all")
     os.system('Robocopy /MIR  ' + os.path.join(os.environ["HOMEPATH"], "gE_Ode", "monster_mash", "project_Monster_mash") + ' D://gE_Ode/monster_mash/project_Monster_mash')
 
 @eel.expose
