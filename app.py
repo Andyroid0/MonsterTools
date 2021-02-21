@@ -9,10 +9,10 @@ load_dotenv()
 os.path.join(os.environ["HOMEPATH"], "Desktop")
 # Quick Setup -------
 
-if os.path.exists(os.path.join(os.environ["HOMEPATH"], "gE_Ode")) == False:
-    os.system('mkdir ' + os.path.join(os.environ["HOMEPATH"], "gE_Ode"))
-if os.path.exists("D://gE_Ode") == False:
-    os.system('mkdir "D://gE_Ode"')
+#if os.path.exists(os.path.join(os.environ["HOMEPATH"], "gE_Ode")) == False:
+#    os.system('mkdir ' + os.path.join(os.environ["HOMEPATH"], "gE_Ode"))
+#if os.path.exists("D://gE_Ode") == False:
+#    os.system('mkdir "D://gE_Ode"')
 if os.path.exists(os.path.join(os.environ["HOMEPATH"], "gE_Ode", "monster_mash")) == False:
     os.system('mkdir ' + os.path.join(os.environ["HOMEPATH"], "gE_Ode", "monster_mash"))
 if os.path.exists("D://gE_Ode/monster_mash") == False:
