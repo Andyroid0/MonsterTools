@@ -14,6 +14,25 @@ function console_test()
 
 }
 
+eel.expose(show_Spinner)
+function show_Spinner()
+{
+    var spinner_object = document.getElementById('spinner')
+    spinner_object.setAttribute("class", "spinner-border text-danger buttonsmargin"); 
+}
+
+eel.expose(hide_Spinner)
+function hide_Spinner()
+{ 
+    
+    var spinner_object = document.getElementById('spinner')
+    spinner_object.setAttribute("class", "spinner-border text-danger buttonsmargin visually-hidden") 
+            
+}
+
+
+
+
 //=============================================================================
 //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 //=============================================================================

@@ -16,26 +16,40 @@
     </head>
 
     <body>
+
+        <!-- GIT Button Column -->
         <div class="btn-group-vertical buttonsmargin" role="group" aria-label="Basic outlined example">
 
-          <button type="button" class="btn btn-outline-success" onclick="eel.git_push_all(), location.reload(true)">Push All</button>
-          <button type="button" class="btn btn-outline-success" onclick="eel.git_pull(), location.reload(true)">Pull</button>
+          <button type="button" class="btn btn-outline-success" onclick="show_Spinner(), eel.git_push_all(), location.reload(true)">Push All</button>
+          <button type="button" class="btn btn-outline-success" onclick="show_Spinner(), eel.git_pull(), location.reload(true)">Pull</button>
           <button type="button" class="btn btn-outline-success" onclick="eel.open_code_editor()">Launch VScode</button>
+
           
+        </div>
 
-        </div> 
-        <img src="./img/Monster_tools_text.png">
+        <!-- Spinner System -->
+        <div class="spinner-border text-danger buttonsmargin visually-hidden" id="spinner" role="status">  
+        </div>
+        
+
+        <!-- MonsterTools Header Image -->
+        <img src="./img/Monster_tools_text.png" class="buttonsmargin">
+
+
         <br>
         <br>
 
+        <!-- Task Controls -->
         <button type="button" class="btn btn-success btn-lg " data-toggle="modal" data-target="#modalContactForm" >New Task</button>
         <button onclick="location.reload(true)" class="btn btn-success btn-lg ">Reload</button>
         
+
+        
         
 
 
         <br>
-        location.reload(true)
+        
         <!-- ==========================================================================================  -->
 <!-- ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  -->
 <!-- ------------------------------------------------------------------------------------------  -->

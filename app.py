@@ -43,10 +43,12 @@ def git_push_all():
     os.system('cd ' + os.path.join(os.environ["HOMEPATH"], "gE_Ode", "monster_mash", "project_Monster_mash") + ' && git commit -m "Revision"')
     os.system("cd " + os.path.join(os.environ["HOMEPATH"], "gE_Ode", "monster_mash", "project_Monster_mash") + " && git push https://andyroid0:" + token + "@github.com/Andyroid0/project_Monster_mash.git --all")
     os.system('Robocopy /MIR  ' + os.path.join(os.environ["HOMEPATH"], "gE_Ode", "monster_mash", "project_Monster_mash") + ' D://gE_Ode/monster_mash/project_Monster_mash')
+    eel.hide_Spinner()
 
 @eel.expose
 def git_pull():
     os.system('cd ' + os.path.join(os.environ["HOMEPATH"], "gE_Ode", "monster_mash", "project_Monster_mash") + ' && git pull')
+    eel.hide_Spinner()
 
 @eel.expose
 def open_code_editor():
